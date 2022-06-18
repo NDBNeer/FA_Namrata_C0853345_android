@@ -24,11 +24,13 @@ public class MainActivity extends AppCompatActivity {
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
     private static final int REQUEST_CODE = 101;
-    
+    SharedPreference sharedPreference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sharedPreference=new SharedPreference(MainActivity.this);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         getLocation();
     }
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
                         @Override
                         public void run() {
-                         //intent here
+                           //intent here
                         }
                     }, SPLASH_TIME_OUT);
 
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
