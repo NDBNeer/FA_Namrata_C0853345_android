@@ -88,32 +88,35 @@
                         tools:context=".MainActivity" />
 
                     <LinearLayout
-                        android:layout_margin="16dp"
-                        android:gravity="center"
                         android:id="@+id/addressLl"
-                        android:background="@drawable/edittext_selectorbg"
-                        android:weightSum="2"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/edittext_selectorbg"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:textSize="12sp"
-                            android:background="@android:color/transparent"
-                            android:layout_weight="1.7"
-                            android:padding="10dp"
                             android:id="@+id/addressEt"
-                            android:singleLine="true"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.7"
+                            android:background="@android:color/transparent"
+                            android:padding="10dp"
+                            android:singleLine="true"
+                            android:textSize="12sp" />
 
                         <ImageView
                             android:id="@+id/currentPositionIMg"
-                            android:padding="@dimen/_10sdp"
-                            android:layout_weight="0.3"
-                            android:src="@drawable/icaddress"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:padding="@dimen/_10sdp"
+                            android:src="@drawable/icaddress">
 
                         </ImageView>
 
