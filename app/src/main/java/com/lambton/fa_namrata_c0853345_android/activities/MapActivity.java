@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -43,6 +44,8 @@ import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.lambton.fa_namrata_c0853345_android.R;
+import com.lambton.fa_namrata_c0853345_android.db.DatabaseClient;
+import com.lambton.fa_namrata_c0853345_android.db.entities.AddExpense;
 import com.lambton.fa_namrata_c0853345_android.preference.SharedPreference;
 
 import java.util.Arrays;
@@ -160,13 +163,15 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
 
     private void showMapTypeDialog() {
         Dialog alertDialog = new Dialog(MapActivity.this);
+        ;
         View view = getLayoutInflater().inflate(R.layout.dialoglayout, null);
-        TextView mHybrid,mTerrain,mSatellite,mRoadmap,mNone;
-        mNone = view.findViewById(R.id.type_none);
-        mRoadmap = view.findViewById(R.id.type_normal);
-        mHybrid = view.findViewById(R.id.type_hybrid);
-        mTerrain = view.findViewById(R.id.type_terrain);
-        mSatellite = view.findViewById(R.id.type_satellite);
+
+        TextView mHybrid = view.findViewById(R.id.type_hybrid);
+        TextView mTerrain = view.findViewById(R.id.type_terrain);
+        TextView mSatellite = view.findViewById(R.id.type_satellite);
+        TextView mRoadmap = view.findViewById(R.id.type_normal);
+        TextView mNone = view.findViewById(R.id.type_none);
+
         mHybrid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -174,6 +179,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
                 alertDialog.dismiss();
             }
         });
+
         mTerrain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -181,6 +187,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
                 alertDialog.dismiss();
             }
         });
+
         mSatellite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -257,6 +264,17 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
                         .position(marker.getPosition())
                         .title(getCompleteAddressString(lat,lng))
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+
+                saveToFavourites(getCompleteAddressString(lat, lng),lat,lng);
+
+                /*mMap.clear();
+                MarkerOptions markerOptions = new MarkerOptions().position(marker.getPosition()).title("I am here!").draggable(true);
+                mMap.animateCamera(CameraUpdateFactory.newLatLng(marker.getPosition()));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(marker.getPosition(), 15));
+                mMap.addMarker(markerOptions);
+
+                saveToFavourites(getCompleteAddressString(marker.getPosition().latitude, marker.getPosition().longitude),lat,lng);
+*/
             }
         });
 
@@ -273,6 +291,9 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
                         .position(latLng)
                         .title(getCompleteAddressString(lat,lng))
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+
+                saveToFavourites(getCompleteAddressString(lat, lng),lat,lng);
+
 
             }
         });
@@ -309,6 +330,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         if (id == R.id.nav_home) {
             recreate();
         } else if (id == R.id.nav_fav) {
+            startActivity(new Intent(MapActivity.this,FavouritePlaceActivity.class));
+
         }
         mDrawerLayout.closeDrawer(Gravity.LEFT);
         return true;
@@ -334,10 +357,41 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(place.getLatLng(), 15));
             mMap.addMarker(markerOptions);
 
+            saveToFavourites(place.getAddress(),lat,lng);
+
+
         } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
             //initialise status
             Status status = Autocomplete.getStatusFromIntent(data);
             Toast.makeText(MapActivity.this, status.getStatusMessage(), Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void saveToFavourites(String address, double lat, double lng) {
+        class SaveExpense extends AsyncTask<Void, Void, Void> {
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                AddExpense addIncome = new AddExpense(address,String.valueOf(lat),String.valueOf(lng),"false");
+
+                //adding to database
+                DatabaseClient.getInstance(MapActivity.this).getAppDatabase()
+                        .addExpenseDao()
+                        .insert(addIncome);
+                return null;
+
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                Toast.makeText(MapActivity.this, "Your data has been saved successfully", Toast.LENGTH_LONG).show();
+
+            }
+        }
+
+        SaveExpense saveExpense = new SaveExpense();
+        saveExpense.execute();
+
     }
 }

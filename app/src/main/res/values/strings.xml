@@ -8,4 +8,11 @@
     <string name="type_satellite">TYPE SATELLITE</string>
     <string name="search_here">Try search here..!</string>
     <string name="search_or_long_press_on_map_to_save_favourites">Search or Long press on map to save favourites.!</string>
+
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_fav_maps">FavMapsActivity</string>
+    <string name="mark_as_visited"><u>Mark As Visited</u></string>
+    <string name="get_directions"><u>Get Directions</u></string>
+    <string name="get_distance"><u>Get Distance</u></string>
+    <string name="get_nearby_restro_bars_cafe"><u>Get Nearby Restro,bars,cafe</u></string>
 </resources>
