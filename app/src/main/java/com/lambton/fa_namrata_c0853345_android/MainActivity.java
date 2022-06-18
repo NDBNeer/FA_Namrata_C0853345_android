@@ -53,7 +53,13 @@ public class MainActivity extends AppCompatActivity {
 
                         @Override
                         public void run() {
-                           //intent here
+                            Intent i = new Intent(MainActivity.this, MapActivity.class);
+                            i.putExtra("Lat",currentLocation.getLatitude());
+                            i.putExtra("Lng",currentLocation.getLongitude());
+                            SharedPreference.setLatitude(String.valueOf(currentLocation.getLatitude()));
+                            SharedPreference.setLongitude(String.valueOf(currentLocation.getLongitude()));
+                            startActivity(i);
+                            finish();
                         }
                     }, SPLASH_TIME_OUT);
 
