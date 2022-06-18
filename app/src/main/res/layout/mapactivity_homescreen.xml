@@ -50,23 +50,15 @@
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:text="@string/travel_map_app"
                         android:textColor="@color/purple_700" />
-
-
-
                 </LinearLayout>
-
             </androidx.appcompat.widget.Toolbar>
-
         </com.google.android.material.appbar.AppBarLayout>
-
-
         <LinearLayout
+            android:id="@+id/lay1"
             android:layout_below="@id/appBar"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-
             <LinearLayout
                 android:orientation="vertical"
                 android:weightSum="3"
@@ -124,6 +116,7 @@
                     </LinearLayout>
                 </RelativeLayout>
                 <LinearLayout
+                    android:id="@+id/lay"
                     android:orientation="vertical"
                     android:layout_weight="0.5"
                     android:layout_width="match_parent"
@@ -190,13 +183,14 @@
 
                 </LinearLayout>
 
-
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottomNavigationView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@color/white"
+                    app:menu="@menu/bottom_nav_menu"/>
             </LinearLayout>
-
-
         </LinearLayout>
-
-
     </RelativeLayout>
 
 
