@@ -438,6 +438,8 @@ public class FavoritePlcMapActivity extends FragmentActivity implements OnMapRea
                 Marker m = mMap.addMarker(markerOptions);
 
             }
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(list.get(0).get("lat")),
+                    Double.parseDouble(list.get(0).get("lng"))), 15));
         }
     }
 

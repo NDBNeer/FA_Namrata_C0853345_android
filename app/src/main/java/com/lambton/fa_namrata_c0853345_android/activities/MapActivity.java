@@ -40,6 +40,7 @@ import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.lambton.fa_namrata_c0853345_android.R;
@@ -54,7 +55,7 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MapActivity extends FragmentActivity implements OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener {
+public class MapActivity extends FragmentActivity implements OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
 
     @BindView(R.id.drawer_layout)
@@ -82,7 +83,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     double lat, lng;
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
-
+    BottomNavigationView bottomNavigationView;
     SharedPreference sharedPreference;
 
     @Override
@@ -102,6 +103,14 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             lng = bundle.getDouble("Lng");
         }
 
+      /*  bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.mCurrentLocationBtn);
+        bottomNavigationView.setSelectedItemId(R.id.mMapTypeBtn);
+        bottomNavigationView.setSelectedItemId(R.id.favouriteplace);
+*/
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -265,15 +274,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
 
                 saveToFavourites(getCompleteAddressString(lat, lng),lat,lng);
-
-                /*mMap.clear();
-                MarkerOptions markerOptions = new MarkerOptions().position(marker.getPosition()).title("I am here!").draggable(true);
-                mMap.animateCamera(CameraUpdateFactory.newLatLng(marker.getPosition()));
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(marker.getPosition(), 15));
-                mMap.addMarker(markerOptions);
-
-                saveToFavourites(getCompleteAddressString(marker.getPosition().latitude, marker.getPosition().longitude),lat,lng);
-*/
             }
         });
 
@@ -393,4 +393,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         saveExpense.execute();
 
     }
+
+
 }
