@@ -1,4 +1,4 @@
-package com.lambton.fa_namrata_c0853345_android;
+package com.lambton.fa_namrata_c0853345_android.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +17,8 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.lambton.fa_namrata_c0853345_android.R;
+import com.lambton.fa_namrata_c0853345_android.preference.SharedPreference;
 
 public class MainActivity extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 2000;

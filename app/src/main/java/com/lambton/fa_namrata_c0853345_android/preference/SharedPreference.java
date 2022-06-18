@@ -1,4 +1,4 @@
-package com.lambton.fa_namrata_c0853345_android;
+package com.lambton.fa_namrata_c0853345_android.preference;
 
 import android.content.Context;
 import android.content.SharedPreferences;
