@@ -42,7 +42,6 @@
                         android:src="@drawable/menu" />
 
                     <TextView
-                        android:layout_marginTop="3dp"
                         android:layout_gravity="center"
                         android:textSize="20sp"
                         android:layout_width="match_parent"
@@ -116,6 +115,8 @@
                     </LinearLayout>
                 </RelativeLayout>
                 <LinearLayout
+                    android:layout_gravity="center"
+                    android:gravity="bottom"
                     android:id="@+id/lay"
                     android:orientation="vertical"
                     android:layout_weight="0.5"
@@ -127,29 +128,35 @@
                         android:layout_margin="@dimen/_3sdp"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textColor="@android:color/black"
+                        android:textColor="@color/locaddress"
                         android:text="@string/search_or_long_press_on_map_to_save_favourites"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-
-
                     </TextView>
 
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/darkgrey"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:alpha="0.1"/>
 
                     <LinearLayout
                         android:layout_gravity="center"
-                        android:gravity="center"
-                        android:layout_margin="@dimen/_10sdp"
-                        android:weightSum="2"
+                        android:gravity="bottom|center"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                      <!--  <LinearLayout
+                        android:layout_height="@dimen/_50sdp">
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:minWidth="@dimen/_50sdp"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:orientation="vertical"
-                            android:id="@+id/mCurrentLocationBtn">
+                            android:padding="@dimen/_5sdp"
+                            android:id="@+id/home">
                             <ImageView
                                 android:layout_gravity="center"
                                 android:layout_width="@dimen/_20sdp"
@@ -157,11 +164,98 @@
                                 android:src="@drawable/home"/>
                             <TextView
                                 android:gravity="center"
+                                android:textColor="@color/darkgrey"
+                                android:textSize="@dimen/_10ssp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Home"/>
-                        </LinearLayout>-->
-                        <Button
+                        </LinearLayout>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/darkgrey"
+                            android:layout_margin="@dimen/_3sdp"
+                            android:alpha="0.1"/>
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:minWidth="@dimen/_50sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_5sdp"
+                            android:id="@+id/mCurrentLocationBtn">
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:src="@drawable/loc"/>
+                            <TextView
+                                android:gravity="center"
+                                android:textColor="@color/darkgrey"
+                                android:textSize="@dimen/_10ssp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Current Location"/>
+                        </LinearLayout>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/darkgrey"
+                            android:layout_margin="@dimen/_3sdp"
+                            android:alpha="0.1"/>
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:minWidth="@dimen/_50sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_5sdp"
+                            android:id="@+id/mMapTypeBtn">
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:src="@drawable/map"/>
+                            <TextView
+                                android:gravity="center"
+                                android:textColor="@color/darkgrey"
+                                android:textSize="@dimen/_10ssp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Map Type"/>
+                        </LinearLayout>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/darkgrey"
+                            android:layout_margin="@dimen/_3sdp"
+                            android:alpha="0.1"/>
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:minWidth="@dimen/_50sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_5sdp"
+                            android:id="@+id/favouriteplace">
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:src="@drawable/ic_baseline_favorite_24"/>
+                            <TextView
+                                android:gravity="center"
+                                android:textColor="@color/darkgrey"
+                                android:textSize="@dimen/_10ssp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Favourite Places"/>
+                        </LinearLayout>
+
+                       <!-- <Button
                             android:layout_weight="1"
                             android:id="@+id/mCurrentLocationBtn"
                             android:layout_width="0dp"
@@ -172,8 +266,8 @@
                             android:textAllCaps="false"
                             android:textColor="@android:color/white"
                             android:textSize="14sp" />
-
-                        <Button
+-->
+                       <!-- <Button
                             android:layout_marginLeft="@dimen/_10sdp"
                             android:layout_weight="1"
                             android:id="@+id/mMapTypeBtn"
@@ -184,7 +278,7 @@
                             android:text="Change Map Type"
                             android:textAllCaps="false"
                             android:textColor="@android:color/white"
-                            android:textSize="14sp" />
+                            android:textSize="14sp" />-->
                     </LinearLayout>
                 </LinearLayout>
             <!--

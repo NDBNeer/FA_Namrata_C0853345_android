@@ -74,10 +74,14 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     ImageView currentPositionIMg;
 
     @BindView(R.id.mMapTypeBtn)
-    Button mMapTypeBtn;
+    LinearLayout mMapTypeBtn;
 
     @BindView(R.id.mCurrentLocationBtn)
-    Button mCurrentLocationBtn;
+    LinearLayout mCurrentLocationBtn;
+    @BindView(R.id.home)
+    LinearLayout home;
+    @BindView(R.id.favouriteplace)
+    LinearLayout favouriteplace;
 
     private GoogleMap mMap;
     double lat, lng;
@@ -102,15 +106,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             lat = bundle.getDouble("Lat");
             lng = bundle.getDouble("Lng");
         }
-
-      /*  bottomNavigationView = findViewById(R.id.bottomNavigationView);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
-        bottomNavigationView.setSelectedItemId(R.id.home);
-        bottomNavigationView.setSelectedItemId(R.id.mCurrentLocationBtn);
-        bottomNavigationView.setSelectedItemId(R.id.mMapTypeBtn);
-        bottomNavigationView.setSelectedItemId(R.id.favouriteplace);
-*/
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -164,6 +159,18 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
                 mAddressEt.invalidate();
                 mAddressEt.setText(getCompleteAddressString(Double.parseDouble(SharedPreference.getLatitude()), Double.parseDouble(SharedPreference.getLongitude())));
 
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recreate();
+            }
+        });
+        favouriteplace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MapActivity.this,FavouritePlaceActivity.class));
             }
         });
     }
