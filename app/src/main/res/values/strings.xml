@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">FA_Namrata_C0853345_android</string>
     <string name="google_maps_key">AIzaSyCb6mHsu4ph9RCL6a8SucpVhhbcuzh_Jzo</string>
-    <string name="type_none">TYPE NONE</string>
-    <string name="type_normal">TYPE NORMAL</string>
-    <string name="type_hybrid">TYPE HYBRID</string>
-    <string name="type_terrain">TYPE TERRAIN</string>
-    <string name="type_satellite">TYPE SATELLITE</string>
+    <string name="type_none">NONE</string>
+    <string name="type_normal">NORMAL MAP</string>
+    <string name="type_hybrid">HYBRID MAP</string>
+    <string name="type_terrain">TERRAIN MAP</string>
+    <string name="type_satellite">SATELLITE MAP</string>
     <string name="search_here">Try search here..!</string>
     <string name="search_or_long_press_on_map_to_save_favourites">Search or Long press on map to save favourites.!</string>
 
