@@ -7,7 +7,8 @@
     android:layout_height="wrap_content"
     app:mode="same_level"
     app:dragEdge="right"
-    android:layout_margin="@dimen/_3sdp">
+    android:layout_marginBottom="@dimen/_3sdp"
+   >
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -65,7 +66,6 @@
                         android:textColor="@android:color/black"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
                         android:text="---"
                         android:textSize="16sp" />
 

@@ -40,7 +40,7 @@
                         android:textSize="20sp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Update"
+                        android:text="@string/update_place"
                         android:textColor="@color/purple_700" />
 
 
@@ -124,7 +124,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:layout_weight="1"
-                        android:textColor="@android:color/black"
+                        android:textColor="@color/locaddress"
                         android:text="@string/search_or_long_press_on_map_to_save_favourites"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"/>

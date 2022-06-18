@@ -2,16 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@drawable/travel"
     android:fitsSystemWindows="false">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:alpha="0.75"
-        android:backgroundTint="@color/white"
-        android:background="@drawable/ic_launcher_background"
-        android:contentDescription="@string/app_name" />
-
-
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_centerHorizontal="true"
+    android:textColor="@color/locaddress"
+    android:layout_alignParentBottom="true"
+    android:padding="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_20sdp"
+    android:text="@string/travel_map_app"
+    android:textStyle="bold"
+    android:textSize="@dimen/_26sdp"/>
 </RelativeLayout>
