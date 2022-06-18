@@ -24,7 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.lambton.fa_namrata_c0853345_android.R;
 import com.lambton.fa_namrata_c0853345_android.db.AppDatabase;
 import com.lambton.fa_namrata_c0853345_android.db.DatabaseClient;
-import com.lambton.fa_namrata_c0853345_android.db.entities.AddExpense;
+import com.lambton.fa_namrata_c0853345_android.entities.AddExpense;
 import com.lambton.fa_namrata_c0853345_android.preference.SharedPreference;
 import java.util.ArrayList;
 import java.util.List;

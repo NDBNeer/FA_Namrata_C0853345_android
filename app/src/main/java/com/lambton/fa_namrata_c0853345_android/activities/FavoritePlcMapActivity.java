@@ -33,7 +33,7 @@ import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.google.android.material.textfield.TextInputEditText;
 import com.lambton.fa_namrata_c0853345_android.R;
 import com.lambton.fa_namrata_c0853345_android.db.DatabaseClient;
-import com.lambton.fa_namrata_c0853345_android.db.entities.AddExpense;
+import com.lambton.fa_namrata_c0853345_android.entities.AddExpense;
 import com.lambton.fa_namrata_c0853345_android.preference.SharedPreference;
 
 import org.json.JSONArray;
@@ -107,7 +107,6 @@ public class FavoritePlcMapActivity extends FragmentActivity implements OnMapRea
                 //Create Intent
                 Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fieldList).build(FavoritePlcMapActivity.this);
                 startActivityForResult(intent, 100);
-
             }
         });
 

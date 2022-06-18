@@ -21,7 +21,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentActivity;
 
@@ -45,7 +44,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.lambton.fa_namrata_c0853345_android.R;
 import com.lambton.fa_namrata_c0853345_android.db.DatabaseClient;
-import com.lambton.fa_namrata_c0853345_android.db.entities.AddExpense;
+import com.lambton.fa_namrata_c0853345_android.entities.AddExpense;
 import com.lambton.fa_namrata_c0853345_android.preference.SharedPreference;
 
 import java.util.Arrays;

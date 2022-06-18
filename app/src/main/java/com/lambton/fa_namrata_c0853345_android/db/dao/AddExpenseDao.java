@@ -7,7 +7,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.lambton.fa_namrata_c0853345_android.db.entities.AddExpense;
+import com.lambton.fa_namrata_c0853345_android.entities.AddExpense;
 
 import java.util.List;
 
@@ -25,7 +25,4 @@ public interface AddExpenseDao {
 
     @Update
     void update(AddExpense addExpense);
-
-
-
 }

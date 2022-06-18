@@ -1,4 +1,4 @@
-package com.lambton.fa_namrata_c0853345_android.db.entities;
+package com.lambton.fa_namrata_c0853345_android.entities;
 
 
 import androidx.room.ColumnInfo;
