@@ -48,7 +48,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_5sdp"
-                        android:text="Map"
+                        android:text="@string/travel_map_app"
                         android:textColor="@color/purple_700" />
 
 
@@ -121,14 +121,8 @@
                             android:src="@drawable/icaddress">
 
                         </ImageView>
-
-
                     </LinearLayout>
-
-
                 </RelativeLayout>
-
-
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_weight="0.5"

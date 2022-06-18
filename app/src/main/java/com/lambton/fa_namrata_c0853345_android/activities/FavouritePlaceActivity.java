@@ -81,7 +81,6 @@ public class FavouritePlaceActivity extends AppCompatActivity {
 
 
                 } else {
-
                     mRecyclerView.setVisibility(View.VISIBLE);
                     noDataLl.setVisibility(View.GONE);
                     ledgerAdapter = new LedgerAdapter(FavouritePlaceActivity.this, ledgers);
@@ -153,10 +152,10 @@ public class FavouritePlaceActivity extends AppCompatActivity {
             final AddExpense ledger = childFeedList.get(position);
             holder.mAccountNameTv.setText(ledger.getName());
             if(ledger.getIsVisited().equalsIgnoreCase("false")){
-                holder.mVisited.setText("Mark As Visited");
-                holder.mCardView.setBackgroundColor(Color.parseColor("#FFC4C0"));
+                holder.mVisited.setText(R.string.markasvisited);
+                holder.mCardView.setBackgroundColor(Color.parseColor("#A8C9ED"));
             }else{
-                holder.mVisited.setText("Already Visited");
+                holder.mVisited.setText(R.string.already);
                 holder.mCardView.setBackgroundColor(Color.parseColor("#D0FFD7"));
             }
 
