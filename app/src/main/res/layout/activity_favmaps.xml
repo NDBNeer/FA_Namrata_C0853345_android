@@ -5,6 +5,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -113,8 +114,6 @@
 
 
                 </RelativeLayout>
-
-
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_weight="0.5"
@@ -124,59 +123,31 @@
                     <TextView
                         android:layout_gravity="center"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:textColor="@android:color/black"
                         android:text="@string/search_or_long_press_on_map_to_save_favourites"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-
-                    </TextView>
-
-
-
+                        android:layout_height="0dp"/>
                     <LinearLayout
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:layout_margin="@dimen/_10sdp"
-                        android:weightSum="2"
+                        android:weightSum="1"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
+                        android:layout_height="wrap_content">
                         <Button
-                            android:layout_weight="1"
                             android:id="@+id/mUpdateLocationBtn"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
+                            android:background="@drawable/background_bottombar"
                             android:layout_height="wrap_content"
-                            android:background="@color/purple_700"
                             android:gravity="center"
-                            android:text="Update Location"
+                            android:text="@string/update_location"
                             android:textAllCaps="false"
                             android:textColor="@android:color/white"
                             android:textSize="14sp" />
-
-
-
-
-
-
                     </LinearLayout>
-
-
-
-
-
                 </LinearLayout>
-
-
             </LinearLayout>
-
-
         </LinearLayout>
-
-
     </RelativeLayout>
-
-
-
 </RelativeLayout>
