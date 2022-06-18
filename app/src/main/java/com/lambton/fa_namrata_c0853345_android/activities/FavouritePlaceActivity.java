@@ -173,7 +173,7 @@ public class FavouritePlaceActivity extends AppCompatActivity {
             holder.mEditTv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent=new Intent(FavouritePlaceActivity.this,FavMapsActivity.class);
+                    Intent intent=new Intent(FavouritePlaceActivity.this,FavoritePlcMapActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("OBJ", ledger);
                     intent.putExtras(bundle);
@@ -196,7 +196,7 @@ public class FavouritePlaceActivity extends AppCompatActivity {
             holder.mDistanceTv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent=new Intent(FavouritePlaceActivity.this,FavMapsActivity.class);
+                    Intent intent=new Intent(FavouritePlaceActivity.this,FavoritePlcMapActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("OBJ", ledger);
                     intent.putExtras(bundle);
@@ -206,7 +206,7 @@ public class FavouritePlaceActivity extends AppCompatActivity {
             });holder.mRestroTv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent=new Intent(FavouritePlaceActivity.this,FavMapsActivity.class);
+                    Intent intent=new Intent(FavouritePlaceActivity.this,FavoritePlcMapActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("OBJ", ledger);
                     intent.putExtras(bundle);
