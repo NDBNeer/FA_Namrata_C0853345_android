@@ -6,4 +6,6 @@
     <string name="type_hybrid">TYPE HYBRID</string>
     <string name="type_terrain">TYPE TERRAIN</string>
     <string name="type_satellite">TYPE SATELLITE</string>
+    <string name="search_here">Try search here..!</string>
+    <string name="search_or_long_press_on_map_to_save_favourites">Search or Long press on map to save favourites.!</string>
 </resources>
