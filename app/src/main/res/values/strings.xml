@@ -8,6 +8,7 @@
     <string name="type_satellite">SATELLITE MAP</string>
     <string name="search_here">Try search here..!</string>
     <string name="search_or_long_press_on_map_to_save_favourites">Search or Long press on map to save favourites.!</string>
+    <string name="search_or_long_press_on_map_to_change_favourites">Search or Long press on map to update favourites.!</string>
 
     <string name="title_activity_maps">MapsActivity</string>
     <string name="title_activity_fav_maps">FavMapsActivity</string>

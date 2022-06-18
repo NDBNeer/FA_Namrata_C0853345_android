@@ -125,7 +125,7 @@
                         android:gravity="center"
                         android:layout_weight="1"
                         android:textColor="@color/locaddress"
-                        android:text="@string/search_or_long_press_on_map_to_save_favourites"
+                        android:text="@string/search_or_long_press_on_map_to_change_favourites"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"/>
                     <LinearLayout
