@@ -55,14 +55,8 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MapActivity extends FragmentActivity implements OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener {
+public class MapActivity extends FragmentActivity implements OnMapReadyCallback{
 
-
-    @BindView(R.id.drawer_layout)
-    DrawerLayout mDrawerLayout;
-
-    @BindView(R.id.nav_view)
-    NavigationView mNavView;
 
     @BindView(R.id.menuImg)
     LinearLayout mMenuImg;
@@ -85,9 +79,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
 
     private GoogleMap mMap;
     double lat, lng;
-    Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
-    BottomNavigationView bottomNavigationView;
     SharedPreference sharedPreference;
 
     @Override
@@ -99,8 +91,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
 
 
         sharedPreference=new SharedPreference(MapActivity.this);
-        mNavView.setNavigationItemSelectedListener(this);
-
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             lat = bundle.getDouble("Lat");
@@ -112,18 +102,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.myMap);
         mapFragment.getMapAsync(this);
-
-        mMenuImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
-                    mDrawerLayout.closeDrawer(Gravity.LEFT);
-                } else {
-                    mDrawerLayout.openDrawer(Gravity.LEFT);
-                }
-
-            }
-        });
 
         mAddressEt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -328,19 +306,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             Toast.makeText(MapActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         return strAdd;
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        int id = menuItem.getItemId();
-        if (id == R.id.nav_home) {
-            recreate();
-        } else if (id == R.id.nav_fav) {
-            startActivity(new Intent(MapActivity.this,FavouritePlaceActivity.class));
-
-        }
-        mDrawerLayout.closeDrawer(Gravity.LEFT);
-        return true;
     }
 
     @Override
